@@ -1,4 +1,8 @@
 #include <iostream>
+#include <cmath>
+
+// search for cmath reference
+using namespace std;
 int main() {
     const double pi = 3.14;
     int file_size = 100; // Snake Case
@@ -18,5 +22,22 @@ int main() {
     double z = x / y;
     std::cout << z;
     std::cout << z;
+
+    // << stream insertion operator
+    std::cout << "x = " ;
+    std::cout << x << std::endl;
+
+    cout << "x = " << x << endl
+              << "y = " << y;
+
+    // reading from console
+
+    cout << "Enter a value for input1 and input2:";
+    double input1;
+    double input2;
+
+    cin >> input1 >> input2;
+    cout << input1 + input2;
+
     return 0;
 }
