@@ -37,7 +37,47 @@ int main() {
     double input2;
 
     cin >> input1 >> input2;
-    cout << input1 + input2;
+    cout << input1 + input2 << endl;
+
+    double result = floor(2.3);
+    double result2 = pow(2,3);
+    cout << result2;
+
+    // data types
+
+
+    // short 2 bytes -32768 to 32767
+    // int 4 bytes -2B to 2B
+    // long 4 bytes same
+    // long long
+
+    // float 4 bytes -3.4e38 to 3.4e38
+    // double 8 bytes -1.7e308 to 1.7e308
+    // long double 8 bytes -3.4e932 to 1.7e4832
+
+    // bool 1 byte true/false
+    // char 1 bytes
+
+    double price = 99.99;
+    float interestRate = 3.67f;
+
+    long fileSizes = 90000L;
+    char letter = 'a';
+    bool isValid = true;
+    auto trueOrFalse = true;
+
+//    int number = {1.2};
+    int number = {};// 0
+
+
+
+
+
+
+
+
+
+
 
     return 0;
 }
