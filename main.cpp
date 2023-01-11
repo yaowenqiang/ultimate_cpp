@@ -70,6 +70,17 @@ int main() {
     int number = {};// 0
 
 
+    // number systems
+
+    int binary_number = 0b11111111;// ?
+    int hex_number = 0xFF;
+    unsigned int unsigned_number = -255; // not recommended
+    cout << binary_number;
+    cout << hex_number;
+    cout << unsigned_number;
+
+
+
 
 
 
