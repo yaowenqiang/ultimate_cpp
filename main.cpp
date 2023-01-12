@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 // search for cmath reference
 using namespace std;
@@ -97,5 +99,12 @@ int main() {
 
 
 
+    long elapsedSeconds = time(nullptr);
+//    time(0);
+//    srand(elapsedSeconds);
+    srand(time(nullptr));
+    int randNumber = rand() % 10;
+    cout << std::endl;
+    cout << randNumber;
     return 0;
 }
