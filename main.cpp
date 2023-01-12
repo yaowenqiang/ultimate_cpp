@@ -36,7 +36,7 @@ int main() {
     double input1;
     double input2;
 
-    cin >> input1 >> input2;
+//    cin >> input1 >> input2;
     cout << input1 + input2 << endl;
 
     double result = floor(2.3);
@@ -79,8 +79,15 @@ int main() {
     cout << hex_number;
     cout << unsigned_number;
 
+    // narrowing
 
+    int oneMillion = 1'000'000;
+//    short shortNumber = {oneMillion};
+//    cout << shortNumber;
 
+    short anotherOneMillion = 1'000'000;
+    int aInt = {anotherOneMillion};
+    cout << aInt;
 
 
 
