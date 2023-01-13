@@ -2,10 +2,13 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 // search for cmath reference
 using namespace std;
 int main() {
+    const short minValue = 1;
+    const short maxValue = 6;
     const double pi = 3.14;
     int file_size = 100; // Snake Case
     int FileSize = 100; // Pascal Case
@@ -106,5 +109,17 @@ int main() {
     int randNumber = rand() % 10;
     cout << std::endl;
     cout << randNumber;
+    cout << std::endl;
+
+    short first  = (rand() % (maxValue - minValue + 1)) + minValue;
+    short second  = (rand() % (maxValue - minValue + 1)) + minValue;
+
+    cout << first << ", " << second << endl;
+
+    cout << left;
+    cout << setw(10) << "Spring" << setw(10) << "Nice" << endl
+         << setw(10) << "Summer" << setw(10) << "Hot" << endl;
+
+    cout << fixed << setprecision(2) << 12.34567;
     return 0;
 }
