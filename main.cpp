@@ -121,5 +121,25 @@ int main() {
          << setw(10) << "Summer" << setw(10) << "Hot" << endl;
 
     cout << fixed << setprecision(2) << 12.34567;
+
+    cout << endl;
+
+    cout << sizeof(int) << endl;
+    cout << sizeof(long) << endl;
+    cout << sizeof(long long) << endl;
+
+
+    cout << numeric_limits<int>::min() << endl;
+    cout << numeric_limits<int>::max() << endl;
+    cout << sizeof(long) << endl;
+    cout << numeric_limits<long>::min() << endl;
+    cout << numeric_limits<long>::max() << endl;
+    cout << sizeof(float) << endl;
+    cout << numeric_limits<float>::min() << endl;
+    cout << numeric_limits<float>::max() << endl;
+
+    int largestInteger = numeric_limits<int>::max();
+    largestInteger++;
+    cout << largestInteger << endl;
     return 0;
 }
