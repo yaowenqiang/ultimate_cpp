@@ -141,5 +141,40 @@ int main() {
     int largestInteger = numeric_limits<int>::max();
     largestInteger++;
     cout << largestInteger << endl;
+    int smallestInteger = numeric_limits<int>::max();
+    smallestInteger--;
+    cout << smallestInteger << endl;
+    double largestDouble = numeric_limits<double>::max();
+    largestDouble++;
+    cout << largestDouble << endl;
+
+    float largestFloat = numeric_limits<float>::max();
+    largestFloat++;
+    cout << largestFloat << endl;
+
+    // booleans
+    bool isNewUser = false;
+    cout << boolalpha << isNewUser << endl;
+    cout << noboolalpha << isNewUser << endl;
+
+
+    // char and strings
+
+    char ch = 'a';
+//    char ch = 98;
+    cout << ch << endl;
+    cout << +ch << endl;
+
+    string name = "";
+    cout << "Enter your name: ";
+//    cin >> name;
+    getline(cin, name);
+    cout << "Hi, " << name;
+
+
+
+
+
+
     return 0;
 }
