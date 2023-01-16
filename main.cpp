@@ -165,11 +165,20 @@ int main() {
     cout << ch << endl;
     cout << +ch << endl;
 
-    string name = "";
-    cout << "Enter your name: ";
-//    cin >> name;
-    getline(cin, name);
-    cout << "Hi, " << name;
+//    string name = "";
+//    cout << "Enter your name: ";
+////    cin >> name;
+//    getline(cin, name);
+//    cout << "Hi, " << name;
+
+
+// arrays
+
+    int numbers[5] = {1,2,3,4,5};
+    cout << numbers << endl;
+    cout << numbers[0] << endl;
+    numbers[2] = 10;
+    cout << numbers[5] << endl;
 
 
 
