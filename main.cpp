@@ -180,6 +180,12 @@ int main() {
     numbers[2] = 10;
     cout << numbers[5] << endl;
 
+    int aInteger = 1;
+    double aDouble = 1.1;
+//    int aCombined = aInteger + aDouble;
+//    int aCombined = aInteger + (int)aDouble;
+    int aCombined = aInteger + static_cast<int>(aDouble);
+    cout << aCombined << endl;
 
 
 
