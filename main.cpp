@@ -186,7 +186,12 @@ int main() {
 //    int aCombined = aInteger + (int)aDouble;
     int aCombined = aInteger + static_cast<int>(aDouble);
     cout << aCombined << endl;
-
+    bool compareResult = x != 1;
+    cout << boolalpha << compareResult << endl;
+    double compareDouble = 1.1;
+    int compareInt = 1;
+    bool doubleCompareIntResult = compareDouble > compareInt;
+    cout << doubleCompareIntResult << endl;
 
 
 
