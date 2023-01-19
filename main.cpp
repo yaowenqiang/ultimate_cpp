@@ -193,6 +193,10 @@ int main() {
     bool doubleCompareIntResult = compareDouble > compareInt;
     cout << doubleCompareIntResult << endl;
 
+    for (int i = 0; i < 10; ++i) {
+        cout << i << endl;
+    }
+
 
 
 
