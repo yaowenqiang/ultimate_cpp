@@ -197,6 +197,15 @@ int main() {
         cout << i << endl;
     }
 
+    int loopNumbers[] = {1,2,3};
+    for (int i = 0; i < sizeof(loopNumbers) / sizeof(int);i++) {
+        cout << loopNumbers[i] << endl;
+    }
+
+    for (int i :loopNumbers) {
+        cout << i << endl;
+    }
+
 
 
 
