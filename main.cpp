@@ -6,6 +6,13 @@
 
 // search for cmath reference
 using namespace std;
+
+void increasePrice(double& price) {
+    price+= 1.2;
+}
+
+// function declaration or function prototype
+void greet(string name);
 int main() {
     const short minValue = 1;
     const short maxValue = 6;
@@ -208,6 +215,18 @@ int main() {
 
 
 
+    double doublePrice = 1.0;
+    increasePrice(doublePrice);
+    cout << doublePrice << endl;
 
+    greet("jack");
     return 0;
+}
+
+//function definition
+void greet(string name) {
+   cout << "Hello, " << name << endl;
+}
+void greet(string title, string name) {
+    cout << title << name << endl;
 }
