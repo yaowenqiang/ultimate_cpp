@@ -6,6 +6,9 @@
 #include "utils/greet.hpp"
 // search for cmath reference
 using namespace std;
+//using std::cin, std::cout,std::endl;
+//using namespace messaging;
+using messaging::greet;
 
 void increasePrice(double& price) {
     price+= 1.2;
