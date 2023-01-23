@@ -206,7 +206,8 @@ int main() {
     }
 
     int loopNumbers[] = {1,2,3};
-    for (int i = 0; i < sizeof(loopNumbers) / sizeof(int);i++) {
+//    for (int i = 0; i < sizeof(loopNumbers) / sizeof(int);i++) {
+    for (int i = 0; i < size(loopNumbers);i++) {
         cout << loopNumbers[i] << endl;
     }
 
@@ -219,8 +220,34 @@ int main() {
     double doublePrice = 1.0;
     increasePrice(doublePrice);
     cout << doublePrice << endl;
+    int firstArray[] = {1,2,3};
+    int secondArray[size(firstArray)];
+//    int secondArray[] = first;
+
+    for (int i = 0; i < size(firstArray);i++) {
+        secondArray[i] = firstArray[i];
+    }
+
+    for (int i = 0; i < size(firstArray);i++) {
+        cout << secondArray[i] << endl;
+    }
+
+    cout << firstArray <<  " - " << secondArray << endl;
+    cout << (firstArray == secondArray) << endl;
+
+    bool areEqual = true;
+    for (int i = 0; i < size(firstArray);i++) {
+        if (firstArray[i] != secondArray[i]) {
+            areEqual = false;
+            break;
+        }
+    }
+
+    cout << areEqual << endl;
 
     greet("jack");
+
+
     return 0;
 }
 
