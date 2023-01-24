@@ -14,6 +14,12 @@ void increasePrice(double& price) {
     price+= 1.2;
 }
 
+void printNumbers(int numbers[], int size) {
+    for(int i = 0;i < size; i++) {
+        cout << numbers[i] << endl;
+    }
+}
+
 int main() {
     const short minValue = 1;
     const short maxValue = 6;
@@ -247,7 +253,17 @@ int main() {
 
     greet("jack");
 
+    int newNumbers[] = {1,2,3};
+    printNumbers(newNumbers, size(newNumbers));
 
+    cout << sizeof(int) << endl;
+    cout << sizeof(size_t) << endl;
+
+    cout << numeric_limits<long long>::min() << endl;
+    cout << numeric_limits<long long>::max() << endl;
+
+    cout << numeric_limits<size_t>::min() << endl;
+    cout << numeric_limits<size_t>::max() << endl;
     return 0;
 }
 
