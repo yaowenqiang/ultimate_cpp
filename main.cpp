@@ -264,6 +264,11 @@ int main() {
 
     cout << numeric_limits<size_t>::min() << endl;
     cout << numeric_limits<size_t>::max() << endl;
+
+    int values[3] = {1,2,3};
+    auto [unpackedX, unpackedY, unpackedZ] = values;
+    cout << unpackedX << "," << unpackedY << "," << unpackedZ << endl;
+
     return 0;
 }
 
