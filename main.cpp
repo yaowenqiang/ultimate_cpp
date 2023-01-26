@@ -10,6 +10,15 @@ using namespace std;
 //using namespace messaging;
 using messaging::greet;
 
+int linearSearch(int numbers[], int size, int target) {
+    for(int i = 0; i < size; i++) {
+        cout << numbers[i] << endl;
+        if (numbers[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
 void increasePrice(double& price) {
     price+= 1.2;
 }
@@ -268,6 +277,19 @@ int main() {
     int values[3] = {1,2,3};
     auto [unpackedX, unpackedY, unpackedZ] = values;
     cout << unpackedX << "," << unpackedY << "," << unpackedZ << endl;
+
+
+    // search algorithms
+    // linear search
+    // binary search
+    // ternary search
+    // jump search
+    // exponential search
+
+
+    int searchArray[] = {1,2,3,4};
+    int searchResult = linearSearch(searchArray, 4, 10);
+    cout << searchResult << endl;
 
     return 0;
 }
