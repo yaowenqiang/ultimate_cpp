@@ -19,6 +19,32 @@ int linearSearch(int numbers[], int size, int target) {
     }
     return -1;
 }
+
+// sorting algorithms
+// bubble sort
+// selection sort
+// insertion sort
+// merge sort
+// quick sort
+
+void bubbleSort(int numbers[], int size) {
+    int sortedNumbers[size];
+    for(int i = 0; i < size; i++) {
+        int max = 0;
+        for(int j = i; j < size;j++) {
+            if (numbers[j]> max) {
+                max = numbers[i];
+            }
+        }
+        sortedNumbers[i] = max;
+    }
+    for(int i = 0; i < size; i++) {
+        cout << sortedNumbers[i] << endl;
+    }
+
+
+}
+
 void increasePrice(double& price) {
     price+= 1.2;
 }
@@ -290,10 +316,13 @@ int main() {
     int searchArray[] = {1,2,3,4};
     int searchResult = linearSearch(searchArray, 4, 10);
     cout << searchResult << endl;
+    bubbleSort(searchArray, size(searchArray));
 
     return 0;
 }
 
 void greet(string title, string name) {
     cout << title << name << endl;
+    int unsortedArray[] = {5,4,3,6,1,9};
+    bubbleSort(unsortedArray, size(unsortedArray));
 }
