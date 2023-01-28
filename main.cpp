@@ -31,11 +31,17 @@ void bubbleSort(int numbers[], int size) {
     int sortedNumbers[size];
     for(int i = 0; i < size; i++) {
         int max = 0;
+        cout << "number[i " << i << "] is "  << numbers[i] << endl;
         for(int j = i; j < size;j++) {
+            cout << "number[j " << j << "] is " << numbers[j] << endl;
             if (numbers[j]> max) {
-                max = numbers[i];
+                int tmp = max;
+                max = numbers[j];
+                numbers[j] = tmp;
             }
         }
+        cout << "max is " << max << endl;
+
         sortedNumbers[i] = max;
     }
     for(int i = 0; i < size; i++) {
@@ -43,6 +49,25 @@ void bubbleSort(int numbers[], int size) {
     }
 
 
+}
+
+
+void swap(int numbers[], int i, int j) {
+    int tmp = numbers[i];
+    numbers[i] = numbers[j];
+    numbers[j] = tmp;
+}
+void bubbleSortV2(int numbers[], int size) {
+    for(int i = 0; i < size; i++) {
+        for(int j = 1; j < size;j++) {
+            if (numbers[j]> numbers[j-1]) {
+                swap(numbers, j, j-1);
+            }
+        }
+    }
+    for(int i = 0; i < size; i++) {
+        cout << numbers[i] << endl;
+    }
 }
 
 void increasePrice(double& price) {
@@ -313,10 +338,11 @@ int main() {
     // exponential search
 
 
-    int searchArray[] = {1,2,3,4};
-    int searchResult = linearSearch(searchArray, 4, 10);
+    int searchArray[] = {5, 1,9, 2,3,4, 7};
+    int searchResult = linearSearch(searchArray, size(searchArray), 10);
     cout << searchResult << endl;
-    bubbleSort(searchArray, size(searchArray));
+//    bubbleSort(searchArray, size(searchArray));
+    bubbleSortV2(searchArray, size(searchArray));
 
     return 0;
 }
@@ -324,5 +350,5 @@ int main() {
 void greet(string title, string name) {
     cout << title << name << endl;
     int unsortedArray[] = {5,4,3,6,1,9};
-    bubbleSort(unsortedArray, size(unsortedArray));
+//    bubbleSort(unsortedArray, size(unsortedArray));
 }
