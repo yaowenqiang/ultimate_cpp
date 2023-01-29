@@ -10,6 +10,9 @@ using namespace std;
 //using namespace messaging;
 using messaging::greet;
 
+const int rows=2;
+const int columns=3;
+
 int linearSearch(int numbers[], int size, int target) {
     for(int i = 0; i < size; i++) {
         cout << numbers[i] << endl;
@@ -77,6 +80,15 @@ void increasePrice(double& price) {
 void printNumbers(int numbers[], int size) {
     for(int i = 0;i < size; i++) {
         cout << numbers[i] << endl;
+    }
+}
+
+void printMatrix(int matrix[rows][columns]) {
+    for(int i = 0;i < rows;i++) {
+        for(int j = 0;j < columns;j++ ) {
+            cout << matrix[i][j] << ",";
+        }
+        cout << endl;
     }
 }
 
@@ -344,6 +356,12 @@ int main() {
 //    bubbleSort(searchArray, size(searchArray));
     bubbleSortV2(searchArray, size(searchArray));
 
+    int matrix[2][3] = {
+    {1,2,3},
+    {4,5,6},
+    };
+
+    printMatrix(matrix);
     return 0;
 }
 
