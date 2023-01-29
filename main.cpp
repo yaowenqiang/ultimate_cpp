@@ -356,12 +356,23 @@ int main() {
 //    bubbleSort(searchArray, size(searchArray));
     bubbleSortV2(searchArray, size(searchArray));
 
+    // 2d arrays
     int matrix[2][3] = {
     {1,2,3},
     {4,5,6},
     };
 
     printMatrix(matrix);
+
+
+    // pointers
+
+//    int *ptr = &number;
+    int* ptr = &number;
+    //    int* ptr = nullptr;
+    cout << ptr << " -> " << *ptr << endl;
+    *ptr = 100;
+    cout << ptr << " -> " << *ptr << endl;
     return 0;
 }
 
