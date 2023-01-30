@@ -373,6 +373,27 @@ int main() {
     cout << ptr << " -> " << *ptr << endl;
     *ptr = 100;
     cout << ptr << " -> " << *ptr << endl;
+
+
+    // data is constant, but the pointer is not
+    const int constNumber = 1;
+    int nonConst = 2;
+    const int* PointerToConstVariable = &constNumber;
+    cout <<"PointerToConstVariable: " << *PointerToConstVariable << endl;
+//    *PointerToConstVariable = 2;
+    PointerToConstVariable = &nonConst;
+    cout <<"PointerToConstVariable: " << *PointerToConstVariable << endl;
+
+    // pointer is constant
+    int* const constPointer = &nonConst;
+    cout << *constPointer << endl;
+//    constPointer = nullptr;
+
+    // both data and pointer are constant
+    const int* const ConstConstPointer = &constNumber;
+    cout << *ConstConstPointer << endl;
+//    *ConstConstPointer = 2;
+//    ConstConstPointer = nullptr;
     return 0;
 }
 
