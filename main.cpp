@@ -13,6 +13,19 @@ using messaging::greet;
 const int rows=2;
 const int columns=3;
 
+void increasePriceByReference(double& price) {
+    price *= 1.2;
+}
+void increasePriceByPointer(double* price) {
+    *price *= 1.2;
+}
+
+void swapPointer(double* a, double* b) {
+    double tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 int linearSearch(int numbers[], int size, int target) {
     for(int i = 0; i < size; i++) {
         cout << numbers[i] << endl;
