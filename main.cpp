@@ -20,6 +20,7 @@ void increasePriceByPointer(double* price) {
     *price *= 1.2;
 }
 
+
 void swapPointer(double* a, double* b) {
     double tmp = *a;
     *a = *b;
@@ -407,6 +408,38 @@ int main() {
     cout << *ConstConstPointer << endl;
 //    *ConstConstPointer = 2;
 //    ConstConstPointer = nullptr;
+
+// dynamic memory allocation
+
+int* dynamicPointers = new int[5];
+int entries = 0;
+
+int capacity = 5;
+while(true) {
+    cout << "Number: ";
+    cin >> dynamicPointers[entries];
+    if(cin.fail()) {
+        break;
+    }
+    entries++;
+
+    if (entries == capacity) {
+        capacity *= 2;
+        int* tmpPtr = new int[capacity];
+        for(int i = 0;i < entries;i++) {
+            tmpPtr[i] = dynamicPointers[i];
+        }
+        delete[] dynamicPointers;
+        dynamicPointers = tmpPtr;
+        tmpPtr = nullptr;
+    }
+}
+
+for(int i = 0;i < entries;i++) {
+    cout << dynamicPointers[i] << endl;
+}
+dynamicPointers = nullptr;
+delete[] dynamicPointers;
     return 0;
 }
 
