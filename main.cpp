@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
+#include <memory>
 #include "utils/greet.hpp"
 // search for cmath reference
 using namespace std;
@@ -411,35 +412,49 @@ int main() {
 
 // dynamic memory allocation
 
-int* dynamicPointers = new int[5];
-int entries = 0;
+    int* dynamicPointers = new int[5];
+    int entries = 0;
 
-int capacity = 5;
-while(true) {
-    cout << "Number: ";
-    cin >> dynamicPointers[entries];
-    if(cin.fail()) {
-        break;
-    }
-    entries++;
-
-    if (entries == capacity) {
-        capacity *= 2;
-        int* tmpPtr = new int[capacity];
-        for(int i = 0;i < entries;i++) {
-            tmpPtr[i] = dynamicPointers[i];
+    int capacity = 5;
+    while(true) {
+        cout << "Number: ";
+        cin >> dynamicPointers[entries];
+        if(cin.fail()) {
+            break;
         }
-        delete[] dynamicPointers;
-        dynamicPointers = tmpPtr;
-        tmpPtr = nullptr;
-    }
-}
+        entries++;
 
-for(int i = 0;i < entries;i++) {
-    cout << dynamicPointers[i] << endl;
-}
-dynamicPointers = nullptr;
-delete[] dynamicPointers;
+        if (entries == capacity) {
+            capacity *= 2;
+            int* tmpPtr = new int[capacity];
+            for(int i = 0;i < entries;i++) {
+                tmpPtr[i] = dynamicPointers[i];
+            }
+            delete[] dynamicPointers;
+            dynamicPointers = tmpPtr;
+            tmpPtr = nullptr;
+        }
+    }
+
+    for(int i = 0;i < entries;i++) {
+        cout << dynamicPointers[i] << endl;
+    }
+    dynamicPointers = nullptr;
+    delete[] dynamicPointers;
+
+
+    // smart pointers
+
+
+    unique_ptr<int> uniquePtr(new int);
+    *uniquePtr = 4;
+    unique_ptr<int> uniqueY = make_unique<int>();
+    auto uniqueZ = make_unique<int>();
+    auto uniqueArray = make_unique<int[]>(2);
+    uniqueArray[0] = 0;
+//    cout << uniquePtr << endl;
+    cout << uniquePtr << endl;
+//    cout << size(uniqueArray) << endl;
     return 0;
 }
 
