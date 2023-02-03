@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <memory>
 #include "utils/greet.hpp"
+#include <cstring>
 // search for cmath reference
 using namespace std;
 //using std::cin, std::cout,std::endl;
@@ -465,6 +466,78 @@ int main() {
     *sharedPtr2 = 100;
     cout << *sharedPtr << endl;
     cout << *sharedPtr2 << endl;
+
+    // cstrings
+
+//    char name[5] = {'a','b','c','d','\0'};
+    char name[] = "abcd";
+    cout << name << size(name)<< endl;
+    cout << strlen(name) << endl;
+    char firstName[] = "jack" ;
+    char lastName[] = "yao";
+    strcat(firstName, lastName);
+    cout << firstName  << endl;
+    strcpy(firstName, lastName);
+    cout << firstName  << endl;
+    strcmp(firstName, lastName);
+
+
+    // c++ strings
+    string myName = "Jack";
+    myName[0] = 'j';
+
+    cout << myName.length() << endl;
+    myName += "Yao";
+    string oldName = myName;
+    if (oldName == myName) {
+        cout << "equal" << endl;
+    }
+    if (myName.starts_with('m')) {
+        cout << "stat with m" << endl;
+    }
+    if (myName.empty()) {
+        cout << "empty" << endl;
+    }
+
+    cout << myName.front() << " " << myName.back() << endl;
+
+    // google c++ string reference
+
+    // string functions for modifying strings
+    myName.append("hi");
+    myName.insert(0,"hi");
+    myName.erase(0,3);
+    myName.clear();
+    myName.replace(0, 2, "MO");
+
+
+    // string functions for search strings
+    cout << "find: " << myName.find('a') << endl;
+    if (myName.find('a' ) == -1) {
+        cout << "doesn't exists." << endl;
+    }
+    if (myName.find("hell") == -1) {
+        cout << "doesn't exists." << endl;
+    }
+
+    myName.rfind("yao");
+    myName.find_first_of("yao");
+    myName.find_last_of("yao");
+    myName.find_last_not_of("yao");
+
+    // extract sub strings
+
+    string copy = myName.substr();
+
+    // size_t = unsigned int/ long
+
+    myName.substr(5);
+    myName.substr(5, 3);
+    size_t t = -1;// unsigned int can't store negative number
+    cout << t << endl;// so t change to largest size_t, under flow
+    cout << t +
+
+
     return 0;
 }
 
