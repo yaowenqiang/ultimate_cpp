@@ -455,6 +455,16 @@ int main() {
 //    cout << uniquePtr << endl;
     cout << uniquePtr << endl;
 //    cout << size(uniqueArray) << endl;
+
+    // shared pointers
+//    shared_ptr<int> sharedPtr = make_shared<int>();
+    auto sharedPtr = make_shared<int>();
+    *sharedPtr = 10;
+    shared_ptr<int> sharedPtr2(sharedPtr);
+    cout << (sharedPtr == sharedPtr2) << endl;
+    *sharedPtr2 = 100;
+    cout << *sharedPtr << endl;
+    cout << *sharedPtr2 << endl;
     return 0;
 }
 
