@@ -535,7 +535,31 @@ int main() {
     myName.substr(5, 3);
     size_t t = -1;// unsigned int can't store negative number
     cout << t << endl;// so t change to largest size_t, under flow
-    cout << t +
+
+    // characters
+
+    islower(myName[0]);
+    isupper(myName[0]);
+    isalpha(myName[0]);
+    isdigit(myName[0]);
+    isspace(myName[0]);
+    (char)toupper(myName[0]);
+    tolower(myName[0]);
+
+    // string_numeric conversion
+
+    string stringPrice = "100.10";
+    stod(stringPrice);
+    stof(stringPrice);
+    to_string(123);
+    to_string(123.11);
+
+    // escape sequences
+
+    
+
+
+
 
 
     return 0;
