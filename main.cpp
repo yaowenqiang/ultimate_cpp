@@ -556,7 +556,14 @@ int main() {
 
     // escape sequences
 
-    
+    char singleQuote  = '\'';
+    string escapeStr =  "c:\\ \"  \' ' my folder \n \t";
+
+    // raw strings
+
+    string rawString = R"(abc)";
+
+
 
 
 
