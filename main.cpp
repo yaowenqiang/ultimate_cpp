@@ -6,6 +6,7 @@
 #include <memory>
 #include "utils/greet.hpp"
 #include <cstring>
+#include <vector>
 // search for cmath reference
 using namespace std;
 //using std::cin, std::cout,std::endl;
@@ -14,6 +15,22 @@ using messaging::greet;
 
 const int rows=2;
 const int columns=3;
+
+struct Date {
+    short year = 1900;
+    short month = 0;
+    short day = 0;
+};
+
+struct Movie {
+    string title = "";
+    int releaseYear = 0;
+    bool isPopular = true;
+    Date releaseDate;
+    bool equals(const Movie& movie) {
+        
+    }
+};
 
 void increasePriceByReference(double& price) {
     price *= 1.2;
@@ -549,6 +566,7 @@ int main() {
     // string_numeric conversion
 
     string stringPrice = "100.10";
+    cout << "stringPrice: " << stringPrice << endl;
     stod(stringPrice);
     stof(stringPrice);
     to_string(123);
@@ -562,6 +580,54 @@ int main() {
     // raw strings
 
     string rawString = R"(abc)";
+
+    // structures
+
+//    Movie movie  {};
+    Date date { 1984, 6, 1};
+    Movie movie = {
+            "Terminator",
+            1984,
+            true,
+//            date,
+            {1984, 6,1},
+    };
+    Movie movie2 = {
+            "Terminator",
+            1984,
+            true,
+            {1984, 6,1},
+    };
+    movie.title = "Terminator";
+    movie.releaseYear = 1984;
+
+    // c++: structured binding
+    // JS:  destructuring
+    // Python: unpacking
+
+    auto [title, releaseYear, isPopular] { movie };
+
+    // vector
+
+    vector<Movie> movies;
+    movies.push_back(movie);
+    movies.push_back({"Terminator2", 1984});
+    cout << movies[0].title << endl;
+
+    for (auto m :movies) {
+        cout << m.title << endl;
+    }
+
+
+
+
+
+
+    cout << "title:" << movie.title <<  endl
+        << "Release Year: " << movie.releaseYear << endl;
+
+
+
 
 
 
