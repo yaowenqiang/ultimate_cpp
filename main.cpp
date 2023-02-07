@@ -28,10 +28,21 @@ struct Movie {
     bool isPopular = true;
     Date releaseDate;
     bool equals(const Movie& movie) {
-        
+
+    }
+//    bool equal(const Movie& movie) const {
+    bool operator==(const Movie& movie) const {
+
     }
 };
 
+bool operator==(const Movie& first, const Movie& second ) {
+}
+
+ostream& operator<<(ostream& stream, const Movie& movie ) {
+    stream << movie.title;
+    return stream;
+}
 void increasePriceByReference(double& price) {
     price *= 1.2;
 }
