@@ -39,6 +39,20 @@ struct Movie {
 bool operator==(const Movie& first, const Movie& second ) {
 }
 
+
+Movie getMovie() {
+    return {"Terminator"};
+}
+
+void showMovie(Movie& movie) {
+    cout << movie.title << endl;
+}
+
+void showMovie(Movie* movie) {
+//    cout << (*movie).title << endl;
+    cout << movie->title << endl;
+}
+
 ostream& operator<<(ostream& stream, const Movie& movie ) {
     stream << movie.title;
     return stream;
