@@ -7,6 +7,10 @@
 #include "utils/greet.hpp"
 #include <cstring>
 #include <vector>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+#include <iomanip>
 // search for cmath reference
 using namespace std;
 //using std::cin, std::cout,std::endl;
@@ -35,6 +39,32 @@ struct Movie {
 
     }
 };
+
+
+//enum Action {
+//    List = 1, // 0
+//    Add = 2, // 1
+//    Update = 3
+//};
+enum class Action {
+    List, // 0
+    Add, // 1
+    Update
+};
+
+// if (1 == static_cast<int>(Action::List)) {
+
+//}
+
+enum class Operation {
+    List, // 0
+    Add, // 1
+    Update
+};
+
+// use Action::List
+
+
 
 bool operator==(const Movie& first, const Movie& second ) {
 }
@@ -650,6 +680,139 @@ int main() {
 
     cout << "title:" << movie.title <<  endl
         << "Release Year: " << movie.releaseYear << endl;
+
+
+
+    // enums
+
+
+    // streams
+    // istream
+    // ostream
+    // ifstream
+    // ofstream
+    // istringstream
+    // ostringstream
+    // cpp ios
+
+    int firstArg;
+
+    // buffer
+    cin >> firstArg;
+//    cin.ignore(10, '\n');// clear the buffer
+while (true) {
+    if(cin.fail()) {
+        //
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');// clear the buffer
+    } else {
+        break;
+    }
+}
+//    cin.ignore(numeric_limits<streamsize>::max(), '\n');// clear the buffer
+
+// file stream
+// ifstream(input file stream)
+// ofstrea(output file stream)
+// fstream()
+
+ofstream file;
+file.open("data.txt");
+if (file.is_open()) {
+    file << setw(20) << "hello world" << setw(20) << endl; // endl will flush the buffer ,but \n dosn't
+    file.close()
+}
+
+ifstream inputFile;
+inputFile.open("data.csv");
+if (inputFile.is_open()) {
+    string str;
+//    inputFile >> str;
+while(!file.eof()) {
+    getline(inputFile, str, ',');
+    if (str.empty()) {
+        continue;
+    }
+
+    cout << str << endl;
+}
+    inputFile.close();
+}
+
+// writing to binary files
+
+ofstream numberFile(" numbers.txt");
+int numbersToWrite[] = {1'000'000,2'000'000,3'000'000};
+if(numberFile.is_open()) {
+    for(auto n :numbersToWrite) {
+        numberFile << n << endl;
+    }
+   numberFile.close();
+}
+    ofstream binFile(" numbers.bin", ios::binary);
+    if (binFile.is_open()) {
+        binFile.write(reinterpret_cast<char*>(&numbersToWrite), sizeof(numbersToWrite));
+    }
+    binFile.close();
+
+
+    // reading binary files
+    int readingNumbers[3];
+    ifstream inputBinFile("numbers.bin", ios::binary);
+    if(inputBinFile.is_open()) {
+        int readNumber;
+        while(inputBinFile.read(reinterpret_cast<char*>(&readNumber), sizeof(readNumber))) {
+
+        }
+//        inputBinFile.read(reinterpret_cast<char*>(&readingNumbers), sizeof(readingNumbers));
+    }
+
+    inputBinFile.close();
+
+
+    // file stream
+
+    fstream  fileStreamFile;
+    fileStreamFile.open("file.txt", ios::in | ios::out | ios::app | ios::binary);
+    if(fileStreamFile.is_open()) {
+       // do something
+    }
+
+    fileStreamFile.close();
+
+
+    // string streams
+
+    // istringstream
+    // ostringstream
+    // stringstream
+
+    double doubleNumber = 12.34;
+    string s = to_string(doubleNumber);
+
+    stringstream sstream;
+//    sstream << doubleNumber;
+    sstream << fixed << setprecision(2) << doubleNumber;
+    string sstr = sstream.str();
+
+
+    // parsing strings
+
+    string initString = "12.34";
+    istringstream isstream;
+    isstream.str(initString);
+    int firstInt;
+    isstream >> firstInt;
+    int secondInt;
+    isstream >> second;
+
+
+
+
+
+
+
+
 
 
 
