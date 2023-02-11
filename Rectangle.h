@@ -43,11 +43,17 @@ public:
     int getHeight();
 
     void setHeight(int height);
+    ~Rectangle();// destructor, can't be overloaded
+
+    static int getObjectCount();
 
 private:
     int width = 0;
     int height = 0;
     string background;
+
+    static int objectCount;
+
 public:
     void setHeight1(int height);
 

@@ -52,6 +52,7 @@ void Rectangle::setBackground(const string &background) {
 
 Rectangle::Rectangle(const Rectangle& source) {
     cout << "Rectangle copied" << endl;
+    objectCount++;
     this->width = source.width;
     this->height = source.height;
     this->background = source.background;
@@ -59,6 +60,7 @@ Rectangle::Rectangle(const Rectangle& source) {
 
 Rectangle::Rectangle(int width, int height) {
     cout << "construct rectangle" << endl;
+    objectCount++;
     setWidth(width);
     setHeight(height);
 }
@@ -68,6 +70,15 @@ Rectangle::Rectangle(int width, int height, const string &background) : Rectangl
     this->background = background;
 }
 
+Rectangle::~Rectangle() {
+    cout << "Destructor called" << endl;
+}
+
+int Rectangle::objectCount = 0;
+
+int Rectangle::getObjectCount() {
+    return objectCount;
+}
 //Rectangle::Rectangle() {
 //
 //}
