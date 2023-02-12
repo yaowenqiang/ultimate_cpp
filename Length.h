@@ -4,7 +4,7 @@
 
 #ifndef ULTIMATE_CPP_LENGTH_H
 #define ULTIMATE_CPP_LENGTH_H
-
+#include <compare>
 
 class Length {
 public:
@@ -13,6 +13,11 @@ public:
     bool operator !=(const Length& second) const;
     bool operator ==(int other) const;
     bool operator !=(int other) const;
+//    bool operator <(const Length& other) const;
+    std::strong_ordering operator <=>(const Length& other) const;
+//    bool operator <=(const Length& other) const;
+//    bool operator >(const Length& other) const;
+//    bool operator >=(const Length& other) const;
 
 private:
     int value;

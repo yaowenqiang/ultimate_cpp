@@ -4,6 +4,7 @@
 
 #include "Length.h"
 
+
 Length::Length(int value) : value(value) {}
 
 bool Length::operator==(int other) const {
@@ -17,3 +18,23 @@ bool Length::operator!=(const Length &second) const {
 bool Length::operator==(const Length& second) const {
     return value == second.value;
 }
+
+std::strong_ordering Length::operator<=>(const Length &other) const {
+    return value <=> other.value;
+}
+
+//bool Length::operator<(const Length &other) const {
+//    return value < other.value;
+//}
+//
+//bool Length::operator>(const Length &other) const {
+//    return value > other.value;
+//}
+//
+//bool Length::operator<=(const Length &other) const {
+//    return !(value > other.value);
+//}
+//
+//bool Length::operator>=(const Length &other) const {
+//    return !(value < other.value);
+//}
