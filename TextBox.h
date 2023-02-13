@@ -13,6 +13,8 @@ public:
 //    TextBox() = default;
 //    TextBox(bool enabled);
     void draw() const override;
+//    void draw() const final override; final method can't be override, so the final class;
+//    void draw() const override final;
     using Widget::Widget;
     explicit TextBox(bool enabled, const string& value);
     string getValue();

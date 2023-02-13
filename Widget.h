@@ -7,8 +7,11 @@
 
 
 class Widget {
+    // if a class has at least one pure virtual method, this class is a abstract class
 public:
+    // pure virtual method
     virtual void draw() const;// dynamic binding
+    // if defined a virtual method ,must define a virtual destructor
     Widget() = default;
     Widget(bool enabled);
     void enable();
