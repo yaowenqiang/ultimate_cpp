@@ -70,7 +70,7 @@ int main() {
     cout << nine << endl;
 
 
-    Array array(10);
+    Array<int> array(10);
     array[0] = 1;
     cout << array[0] << endl;
 //    cout << array[10] << endl;
