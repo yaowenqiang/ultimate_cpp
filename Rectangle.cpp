@@ -25,10 +25,12 @@ int Rectangle::getWidth() {
 
 void Rectangle::setWidth(int width=0) {
     if (width < 0) {
-        throw invalid_argument("width");
+        throw invalid_argument("The width can't be negative!");
+    } else if (width > 100) {
+        throw out_of_range("The width can't be greater then 100!");
     } else {
-//        (*this).width = width;
         this->width = width;
+//       (*this).width = width;
     }
 }
 
