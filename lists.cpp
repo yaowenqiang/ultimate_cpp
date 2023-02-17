@@ -6,30 +6,39 @@
 #include <list>
 using namespace std;
 
+void display(list<string>& lyst) {
+    list<string>::iterator iter = lyst.begin();
+    while (iter != lyst.end()) {
+        cout << *iter << endl;
+        ++iter;
+    }
+}
+
 int main() {
     list<string> names;
     names.push_back("Jacky");
     names.push_back("John");
-    list<string>::iterator iter = names.begin();
-    while (iter != names.end()) {
-        cout << *iter << endl;
-        ++iter;
-    }
+    display(names);
 
     cout << "first item:" << names.front() << endl;
     cout << "last item:" << names.back() << endl;
 
+    display(names);
     names.reverse();
-    list<string>::iterator riter = names.begin();
-    while (riter != names.end()) {
-        cout << *riter << endl;
-        ++riter;
-    }
     names.sort();
-    list<string>::iterator siter = names.begin();
-    while (siter != names.end()) {
-        cout << *siter << endl;
-        ++siter;
+    display(names);
+    names.push_front("Marry");
+    names.push_front("Front");
+    names.push_back("back");
+    display(names);
+    cout << "Size of list: " << size(names) << endl;
+    names.remove("Jacky");
+    display(names);
+    names.pop_back();
+    names.pop_front();
+    display(names);
+    names.clear();
+    if (names.empty()) {
+        cout << "lists is empty." << endl;
     }
-
 }
