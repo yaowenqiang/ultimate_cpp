@@ -10,6 +10,7 @@ add_executable(OperatorOverloading OperatorOverloading.cpp Length.cpp Length.h A
 add_executable(subclass subclass.cpp TextBox.cpp TextBox.h Widget.cpp Widget.h)
 add_executable(polymorphism polymorphism.cpp Checkbox.cpp Checkbox.h Widget.h Widget.cpp TextBox.h TextBox.cpp)
 add_executable(multiple_inheritance multiple_inheritance.cpp)
-add_executable(exceptions exceptions.cpp Rectangle.cpp Rectangle.h AccountLocked.cpp AccountLocked.h Pair.cpp Pair.h Array.h Array.cpp)
+add_executable(exceptions exceptions.cpp Rectangle.cpp Rectangle.h AccountLocked.cpp AccountLocked.h Pair.cpp Pair.h Array.h Array.cpp cmake-build-debug/deques.cpp)
 add_executable(templates templates.cpp Pair.h Pair.cpp Array.cpp Array.h)
 add_executable(lists lists.cpp)
+add_executable(deques deques.cpp)
